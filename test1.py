@@ -10,8 +10,7 @@ def logger(old_function):
         value = old_function(*args, **kwargs)
         list_to_write = [time, old_function.__name__, args, kwargs, value]
         with open('main.log', 'a', encoding='utf-8') as file:
-            for i in list_to_write:
-                print(i, file=file)
+            print(*list_to_write, file=file)
         return value
     return new_function
 
