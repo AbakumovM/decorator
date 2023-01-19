@@ -12,7 +12,7 @@ def logger(path):
             value = old_function(*args, **kwargs)
             list_to_write = [time, old_function.__name__, args, kwargs, value]
             with open(path, 'a', encoding='utf-8') as file:
-                print(*list_to_write, file=file)
+                print(*list_to_write, sep=', ', file=file)
             return value    
         return new_function
 
